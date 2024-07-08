@@ -1,0 +1,71 @@
+/* src/components/Menu.css */
+
+.menu-container {
+  position: relative;
+  width: 50px; /* Largura inicial da área sensível ao mouse */
+  height: 100vh;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px; /* Largura do menu */
+  height: 100vh;
+  background-color: #333;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.menu.visible {
+  transform: translateX(0); /* Mostra o menu quando está visível */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item:hover {
+  background-color: orange; /* Fundo laranja ao passar o mouse */
+}
+
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  filter: grayscale(100%); /* Ícones em escala de cinza inicialmente */
+  transition: filter 0.3s ease;
+}
+
+.menu-item:hover img {
+  filter: grayscale(0%); /* Ícones coloridos quando o mouse passa sobre eles */
+}
+
+.menu-text {
+  opacity: 0; /* Textos invisíveis inicialmente */
+  transition: opacity 0.3s ease;
+  color: black; /* Cor do texto */
+}
+
+.menu-text.visible {
+  opacity: 1; /* Mostra os textos quando o menu está visível */
+}
+
+.submenu {
+  position: absolute;
+  top: 100%; /* Posiciona o submenu abaixo da opção principal */
+  left: 0;
+  width: 100%;
+  background-color: rgb(248, 200, 111); /* Fundo laranja para o submenu */
+  color: black; /* Cor do texto do submenu */
+  z-index: 1; /* Coloca o submenu acima dos outros itens */
+}
+
+.submenu-item {
+  padding: 10px 15px;
+}
